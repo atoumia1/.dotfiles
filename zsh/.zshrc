@@ -31,8 +31,13 @@ source ~/.config/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias jupyter="ssh -N -L 127.0.0.1:8888:192.168.0.56:8888 82.37.12.112"
+alias sudo="sudo "
+alias rm="echo rm is blocked, use trash instead!"
+alias jupyter="ssh -N -L 127.0.0.1:8888:192.168.1.108:8888 <my_ip> -p 2222"
 alias vim="nvim"
+
+# Environment Variables
+export SUDO_EDITOR="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
