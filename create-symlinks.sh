@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles_dir=$HOME/dotfiles
+dotfiles_dir=$HOME/.dotfiles
 
 # Array of files/folders to link
 declare -A links
