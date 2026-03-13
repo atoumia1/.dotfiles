@@ -21,7 +21,7 @@ case $option in
             
             mkdir -p "$(dirname "$dest")"
 
-            if [ -L "$dest" ]; then
+            if [ -e "$dest" ] || [ -L "$dest" ]; then
                 echo "Backing up: $dest -> $dest.bak"
                 mv "$dest" "$dest.bak"
             fi
