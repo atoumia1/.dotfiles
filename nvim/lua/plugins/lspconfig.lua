@@ -8,8 +8,6 @@ return {
         "L3MON4D3/LuaSnip",
     },
     config = function()
-        local lspconfig = require("lspconfig") -- Import lspconfig
-
         -- Set up nvim-cmp
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
@@ -49,25 +47,29 @@ return {
             handlers = {
                 function(server_name)
                     -- Set up each language server dynamically
-                    lspconfig[server_name].setup {
+                    vim.lsp.config(server_name, {
                         capabilities = capabilities
-                    }
-                end
+                    })
+                    vim.lsp.enable(server_name)
+                end,
+
+                -- Custom handler for lua_ls (Lua Language Server)
+                ["lua_ls"] = function()
+                    vim.lsp.config("lua_ls", {
+                        capabilities = capabilities,
+                        settings = {
+                            Lua = {
+                                runtime = { version = "LuaJIT" },
+                                diagnostics = {
+                                    globals = { "vim" },
+                                },
+                            },
+                        },
+                    })
+                    vim.lsp.enable("lua_ls")
+                end,
             }
         })
-
-        -- Custom handler for lua_ls (Lua Language Server)
-        lspconfig.lua_ls.setup {
-            capabilities = capabilities,
-            settings = {
-                Lua = {
-                    runtime = { version = "LuaJIT" },
-                    diagnostics = {
-                        globals = { "vim" },
-                    },
-                },
-            },
-        }
 
         -- Diagnostic settings
         vim.diagnostic.config({

@@ -3,3 +3,5 @@
 .zcompdump*
 .zsh_history
 lazy-lock.json
+.zsh_sessions
+*.tmp
