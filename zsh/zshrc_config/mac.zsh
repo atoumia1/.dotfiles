@@ -11,6 +11,6 @@ source $PLUGIN_BASE/powerlevel10k/powerlevel10k.zsh-theme
 
 # Homebrew
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export NVM_DIR="/Users/anas.toumia/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
