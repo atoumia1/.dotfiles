@@ -31,6 +31,7 @@ alias sudo="sudo "
 alias rm="echo rm is blocked, use trash instead!"
 alias jupyter="ssh -N -L 127.0.0.1:8888:192.168.1.108:8888 <my_ip> -p 2222"
 alias vim="nvim"
+alias gitgone="git branch -vv | grep ': gone]' | awk '{print \$1}'"
 
 # Environment Variables
 export SUDO_EDITOR="nvim"
